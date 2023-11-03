@@ -59,11 +59,13 @@ public class TicTacToeServer extends DefaultGameServer{
             ArrayList<ServerThread> threads = new ArrayList<>();
 
             // connect two different clients
+            System.out.println("Waiting for client 1 to connect...");
             Socket client = welcomeSocket.accept();
             threads.add(new ServerThread(client, threads));
             System.out.println("Client 1 connected");
             threads.get(0).start();
 
+            System.out.println("Waiting for client 2 to connect...");
             client = welcomeSocket.accept();
             threads.add(new ServerThread(client, threads));
             System.out.println("Client 2 connected");
