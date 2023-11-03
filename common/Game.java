@@ -13,4 +13,9 @@ public interface Game {
      * @param player the player to play the turn for
      */
     void playTurn(Player player);
+
+    /**
+     * Displays the board for the game.
+     */
+    void printBoard();
 }

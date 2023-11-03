@@ -15,5 +15,6 @@ public class TicTacToeClient implements GameClient {
     @Override
     public void connect() throws GameClientException {
 
+
     }
 }

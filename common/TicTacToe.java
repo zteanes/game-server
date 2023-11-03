@@ -1,5 +1,6 @@
 package common;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -10,7 +11,7 @@ import java.util.Scanner;
  * @author Zach Eanes
  * @version 11/02/2023
  */
-public class TicTacToe implements Game{
+public class TicTacToe implements Game, Serializable {
     /** board for the tic-tac-toe game */
     private XAndO[][] board;
 
