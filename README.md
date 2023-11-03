@@ -5,4 +5,4 @@ This project represents many different games that function using a client and se
 TODO
 
 # Notes
-TODO
+This project is current a work-in-progress. All code is not final, but is a process of development.
