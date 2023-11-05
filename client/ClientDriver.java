@@ -1,6 +1,9 @@
 package client;
 
-import static server.ServerDriver.validateArgs;
+import common.Player;
+import common.XAndO;
+
+import java.util.Scanner;
 
 /**
  * Driver class for the client of a game.
@@ -10,6 +13,12 @@ import static server.ServerDriver.validateArgs;
  */
 public class ClientDriver {
     public ClientDriver() {}
+
+    private static final String prompt = """
+            What game would you like to play? Select choice:
+            1. TicTacToe
+            More coming soon!
+            ->\s""";
 
     /**
      * Main method for the client of a game.
@@ -30,7 +39,23 @@ public class ClientDriver {
             }
         }
 
-        GameClient client = new TicTacToeClient(port, host);
+        // prompt for player name
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = scan.nextLine();
+
+        // prompt user for what game they want to play
+        System.out.print(prompt);
+        int choice = scan.nextInt();
+        while (choice != 1) {
+            System.out.println("Invalid choice. Please select another: ");
+            choice = scan.nextInt();
+        }
+
+        // create player and client
+        Player player = new Player(name, 1, XAndO.X);
+        System.out.println("Player created: " + player);
+        GameClient client = new TicTacToeClient(port, host, player);
         System.out.println("Client started on port " + port + " at " + host);
         try {
             client.connect();
