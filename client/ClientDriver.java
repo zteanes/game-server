@@ -12,6 +12,9 @@ import java.util.Scanner;
  * @version 11/03/2023
  */
 public class ClientDriver {
+    /**
+     * Constructor for the ClientDriver class.
+     */
     public ClientDriver() {}
 
     private static final String prompt = """
